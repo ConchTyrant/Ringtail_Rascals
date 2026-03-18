@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cu4ihfbr6ougf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cl13c"]
+radius = 1.0
+height = 6.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rm6hd"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fu3ih"]
+radius = 3.0
+height = 10.0
+
+[node name="Player Collision" type="CollisionShape2D" unique_id=1673913174]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_cl13c")
+metadata/Mocha_Collision_Transform = Transform2D(1, 0, 0, 1, 0, 0)
+metadata/Pieface_Collision_Transform = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Mocha Collision" type="CollisionShape2D" parent="." unique_id=2091901859]
+position = Vector2(0, -2)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_rm6hd")
+disabled = true
+
+[node name="Pieface Collision" type="CollisionShape2D" parent="." unique_id=412591092]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_fu3ih")
+disabled = true

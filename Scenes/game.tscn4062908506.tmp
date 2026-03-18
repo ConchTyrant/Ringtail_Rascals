@@ -1,0 +1,50 @@
+[gd_scene format=4 uid="uid://ooq03uupdt2t"]
+
+[ext_resource type="Texture2D" uid="uid://di8dodidlo5am" path="res://Assets/Sprites/Tilesets/Simple Tileset V3.png" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://nmag6juh1qbu" path="res://Scenes/Player Scenes/player_body.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://bk2heismt31sa" path="res://Scenes/trashbin.tscn" id="3_wrm1d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
+texture = ExtResource("1_ebmjs")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, -8, -8, -8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, -8, -8, -8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, 8, 0, 8, -8, -8, -8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, -8, -8, -8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8)
+
+[sub_resource type="TileSet" id="TileSet_wrm1d"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qxrlw")
+
+[node name="Game" type="Node2D" unique_id=1465166232]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=473841133]
+zoom = Vector2(3, 3)
+
+[node name="Midground" type="TileMapLayer" parent="." unique_id=489694545]
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAIAAAD+/wAAAAAAAAIAAAD//wAAAAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD7/wAAAAAAAAIAAAD8/wAAAAAAAAIAAAAEAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAIAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAEAAAAAAABAP//AAACAAAAAAAAAP3/AAABAAAAAAD6/wAAAAAAAAIAAAD5/wAAAAAAAAIAAAD4/wAAAAAAAAIAAAD3/wAAAAAAAAIAAAD2/wAAAAAAAAIAAAD1/wAAAAAAAAIAAAD0/wAAAAAAAAIAAAD0////AAAAAAIAAAD0//7/AAAAAAIAAAD0//3/AAAAAAIAAAD0//z/AAAAAAIAAAD0//v/AAAAAAIAAAD0//r/AAAAAAIAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAALAP//AAAAAAAAAAALAP7/AAAAAAAAAAALAPz/AAAAAAAAAAALAPv/AAAAAAAAAAALAP3/AAAAAAAAAAALAPr/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_wrm1d")
+
+[node name="Player Body" parent="." unique_id=727997143 instance=ExtResource("2_qxrlw")]
+
+[node name="Trashbin" parent="." unique_id=1350919109 instance=ExtResource("3_wrm1d")]
+position = Vector2(-24, -8)
