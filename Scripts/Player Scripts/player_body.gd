@@ -240,45 +240,11 @@ var can_climb : bool
 
 func reach():
 	
-	# If able to reach
-	if crawling:
-		can_reach = false
-	else:
-		can_reach = true
+	can_reach = true
 	
-	
-	# REACH
-	## Enable reach
 	if Input.is_action_pressed("REACH") and can_reach:
-		reaching = true
-	## Disable reach
-	else:
-		reaching = false
-	
-	
-	# REACH
-	if reaching:
-		animation_player.play("reach")
-	
-	
-	# If able to climb
-	if reaching:
-		can_climb = true
-	
-	
-	if climb_check.has_overlapping_bodies() and can_climb:
-		# Enables player's collision to interact with climbing tiles
-		
-		
-		# 
-		if Input.is_action_pressed("REACH"):
-			velocity.y = -50
-		# Play climb animation if moving up or down
-		if velocity.y:
-			animation_player.play("climb")
-	else:
 		pass
-
+		# layer change for player (walk on stairs)
 
 
 
