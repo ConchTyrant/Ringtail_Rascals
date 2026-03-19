@@ -46,7 +46,8 @@ REACH={
 
 2d_physics/layer_1="Basic Collision"
 2d_physics/layer_2="Tileblock Check"
-2d_physics/layer_3="Climb Collision"
+2d_physics/layer_3="Reach Passthrough Collision"
+2d_physics/layer_4="Ladder Collision"
 
 [physics]
 

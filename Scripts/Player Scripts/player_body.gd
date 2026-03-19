@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 	jump()
 	crawl()
 	reach()
+	climb()
 	# External Forces
 	gravity(delta)
 	# Central function for velocity
@@ -71,7 +72,7 @@ func formController():
 	
 	## -- FORM STABILIZER --
 	# Reset the player form (collision, sprite, traits)
-	if stabilize_form == true:
+	if stabilize_form:
 		
 		# - IDENTIFY -
 		# Identify form and grab measures
@@ -94,6 +95,7 @@ func formController():
 		player_collision.shape.radius = form_collision_measures[0]
 		player_collision.shape.height = form_collision_measures[1]
 		player_collision.position.y = form_collision_measures[2]
+		
 		
 		# Set sprite
 		## Turn off visibility for all player sprites
@@ -193,6 +195,8 @@ func crawl():
 	var can_crawl : bool
 	if not is_on_floor():
 		can_crawl = false
+	elif reaching:
+		can_crawl = false
 	else:
 		can_crawl = true
 	
@@ -229,22 +233,56 @@ func crawl():
 
 
 
-## - Reach and Climb --
-@onready var climb_check = $"Climb Check"
-
-var reaching : bool
-var climbing : bool
-
+## - Reach --
 var can_reach : bool
-var can_climb : bool
+var reaching : bool
 
 func reach():
 	
+	# If able to reach
+	## If would be in collision, do not reach. Unless, already reaching (allowing one-way collision)
+	#if climb_check.has_overlapping_bodies() and not can_reach:
+		#can_reach = false
+	#else:
 	can_reach = true
 	
+	
 	if Input.is_action_pressed("REACH") and can_reach:
-		pass
-		# layer change for player (walk on stairs)
+		reaching = true
+		animation_player.play("reach")
+	else:
+		reaching = false
+	
+	if reaching:
+		# Add collision mask 3 to the player body
+		set_collision_mask_value(3,true)
+		
+	else:
+		stabilize_form = true
+		set_collision_mask_value(3,false)
+
+# - Climb -
+@onready var climb_check = $"Climb Check"
+
+var can_climb : bool
+var climbing : bool
+func climb():
+	
+	can_climb = true
+	
+	if climb_check.has_overlapping_bodies() and reaching and can_climb:
+		climbing = true
+	elif climb_check.has_overlapping_bodies() and not is_on_floor():
+		climbing = true
+	else:
+		climbing = false
+		
+	if climbing:
+		if reaching:
+			velocity.y += 50
+		set_collision_mask_value(4,true)
+	else:
+		set_collision_mask_value(4,false)
 
 
 
