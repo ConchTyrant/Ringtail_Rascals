@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db2enmqjeylqj"
-path="res://.godot/imported/V1.3 PieFace-SpriteSheet.png-d0f838d17aab59cdb3043e602825442f.ctex"
+uid="uid://bbt00jwf5jarv"
+path="res://.godot/imported/V1.4 PieFace-SpriteSheet.png-a11fde9a3da50194bfc97959c00fa36a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Characters/V1.3 PieFace-SpriteSheet.png"
-dest_files=["res://.godot/imported/V1.3 PieFace-SpriteSheet.png-d0f838d17aab59cdb3043e602825442f.ctex"]
+source_file="res://Assets/Sprites/Characters/V1.4 PieFace-SpriteSheet.png"
+dest_files=["res://.godot/imported/V1.4 PieFace-SpriteSheet.png-a11fde9a3da50194bfc97959c00fa36a.ctex"]
 
 [params]
 

@@ -239,50 +239,75 @@ var reaching : bool
 
 func reach():
 	
-	# If able to reach
-	## If would be in collision, do not reach. Unless, already reaching (allowing one-way collision)
-	#if climb_check.has_overlapping_bodies() and not can_reach:
-		#can_reach = false
-	#else:
-	can_reach = true
+	# CAN REACH FUNC
+	if not is_on_floor():
+		can_reach = false
+	else:
+		can_reach = true
 	
 	
-	if Input.is_action_pressed("REACH") and can_reach:
+	# REACH TOGGLE
+	if Input.is_action_pressed("UP") and can_reach:
 		reaching = true
-		animation_player.play("reach")
+	elif reaching and not is_on_floor():
+		reaching = true
 	else:
 		reaching = false
 	
+	
+	# REACH FUNC
 	if reaching:
+		animation_player.play("reach")
+		
 		# Add collision mask 3 to the player body
 		set_collision_mask_value(3,true)
 		
 	else:
-		stabilize_form = true
-		set_collision_mask_value(3,false)
+		if not is_on_floor():
+			set_collision_mask_value(3,true)
+		else:
+			set_collision_mask_value(3,false)
 
 # - Climb -
-@onready var climb_check = $"Climb Check"
+@onready var ladder_check = $"Ladder Check"
 
 var can_climb : bool
 var climbing : bool
+
 func climb():
 	
-	can_climb = true
+	if not reaching:
+		can_climb = false
+	else:
+		can_climb = true
 	
-	if climb_check.has_overlapping_bodies() and reaching and can_climb:
+	# - CLIMB FUNC -
+	if ladder_check.has_overlapping_areas() and can_climb:
 		climbing = true
-	elif climb_check.has_overlapping_bodies() and not is_on_floor():
+	elif ladder_check.has_overlapping_areas() and not is_on_floor() and climbing:
 		climbing = true
 	else:
 		climbing = false
 		
 	if climbing:
-		if reaching:
-			velocity.y += 50
-		set_collision_mask_value(4,true)
+		animation_player.play("climb")
+		
+		
+		# - CLIMB MOVEMENT -
+		# Slow lateral movement
+		velocity.x = velocity.x / 4
+		
+		# Y-Axis movement
+		if Input.is_action_pressed("UP"):
+			velocity.y = -50
+		elif Input.is_action_pressed("DOWN"):
+			velocity.y = 50
+		else:
+			velocity.y = 0
+		
 	else:
-		set_collision_mask_value(4,false)
+		pass
+
 
 
 

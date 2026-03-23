@@ -168,21 +168,6 @@ tracks/1/keys = {
 "values": [&"reach"]
 }
 
-[sub_resource type="Animation" id="Animation_fbsiv"]
-resource_name = "upstairs"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"upstairs"]
-}
-
 [sub_resource type="Animation" id="Animation_tqyr0"]
 resource_name = "walk"
 tracks/0/type = "value"
@@ -218,7 +203,6 @@ _data = {
 &"idle": SubResource("Animation_homby"),
 &"jump": SubResource("Animation_dkojk"),
 &"reach": SubResource("Animation_fdfpq"),
-&"upstairs": SubResource("Animation_fbsiv"),
 &"walk": SubResource("Animation_tqyr0")
 }
 
@@ -265,14 +249,6 @@ region = Rect2(72, 72, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ct2v2"]
 atlas = ExtResource("3_homby")
 region = Rect2(0, 72, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lrwec"]
-atlas = ExtResource("3_tqyr0")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tf3ug"]
-atlas = ExtResource("3_tqyr0")
-region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdfpq"]
 atlas = ExtResource("3_homby")
@@ -343,17 +319,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"reach",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lrwec")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tf3ug")
-}],
-"loop": true,
-"name": &"upstairs",
 "speed": 5.0
 }, {
 "frames": [{
@@ -552,7 +517,6 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_homby")
 
 [node name="Ladder Check" type="Area2D" parent="." unique_id=1296114604]
-visible = false
 collision_layer = 0
 collision_mask = 8
 
