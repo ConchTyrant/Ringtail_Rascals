@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	crawl()
 	reach()
 	climb()
+	grab()
 	# External Forces
 	gravity(delta)
 	# Central function for velocity
@@ -304,9 +305,23 @@ func climb():
 			velocity.y = 50
 		else:
 			velocity.y = 0
-		
-	else:
-		pass
+
+
+
+# - GRAB -
+@onready var grab_range = $"Grab Range"
+
+var pickable_in_range : bool
+
+func grab():
+	pass
+
+
+# Grab Detect
+func _on_grab_range_body_entered(body: Node2D) -> void:
+	if body is Pickable:
+		pickable_in_range = true
+		print("Pickable")
 
 
 

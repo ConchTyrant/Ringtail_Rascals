@@ -538,7 +538,7 @@ visible = false
 collision_layer = 0
 collision_mask = 2
 
-[node name="Crawl Check Upper-Collision" type="CollisionShape2D" parent="Crawl Upper-Check" unique_id=505831923]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crawl Upper-Check" unique_id=505831923]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_tqyr0")
 
@@ -547,7 +547,7 @@ visible = false
 collision_layer = 0
 collision_mask = 2
 
-[node name="Crawl Check Lower-Collision" type="CollisionShape2D" parent="Crawl Lower-Check" unique_id=1828807878]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crawl Lower-Check" unique_id=1828807878]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_homby")
 
@@ -556,6 +556,12 @@ visible = false
 collision_layer = 0
 collision_mask = 8
 
-[node name="Ladder Check Collision" type="CollisionShape2D" parent="Ladder Check" unique_id=899936572]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder Check" unique_id=899936572]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_6ubg4")
+
+[node name="Grab Range" type="Area2D" parent="." unique_id=579576510]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grab Range" unique_id=1565911116]
+
+[connection signal="body_entered" from="Grab Range" to="." method="_on_grab_range_body_entered"]
