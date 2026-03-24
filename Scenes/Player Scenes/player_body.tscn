@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nmag6juh1qbu"]
 
 [ext_resource type="Script" uid="uid://dhyyjeuo1tf84" path="res://Scripts/Player Scripts/player_body.gd" id="1_ruikt"]
+[ext_resource type="Texture2D" uid="uid://crqknlh4r4ygw" path="res://Assets/Sprites/Tilesets/Movables Tileset V1-1.png.png" id="2_bm7d7"]
 [ext_resource type="Texture2D" uid="uid://bscqvhw8oqknf" path="res://Assets/Sprites/Characters/V1.3 Mocha-SpriteSheet.png" id="3_homby"]
 [ext_resource type="Texture2D" uid="uid://cj4ayeypwe1rv" path="res://Assets/Sprites/Characters/V1.4 Mocha-SpriteSheet.png" id="3_tqyr0"]
 [ext_resource type="Texture2D" uid="uid://db2enmqjeylqj" path="res://Assets/Sprites/Characters/V1.3 PieFace-SpriteSheet.png" id="4_tqyr0"]
@@ -11,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -23,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pieface Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -38,7 +39,7 @@ resource_name = "climb"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,7 +51,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pieface Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -65,7 +66,7 @@ resource_name = "crawl"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -77,7 +78,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pieface Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -92,7 +93,7 @@ resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -104,7 +105,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pieface Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -119,7 +120,7 @@ resource_name = "jump"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -131,7 +132,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pieface Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -146,7 +147,7 @@ resource_name = "reach"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -158,7 +159,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pieface Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -173,7 +174,7 @@ resource_name = "upstairs"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mocha Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -188,7 +189,7 @@ resource_name = "walk"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pieface Sprite:animation")
+tracks/0/path = NodePath("Player Sprite/Pieface Sprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -200,7 +201,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Mocha Sprite:animation")
+tracks/1/path = NodePath("Player Sprite/Mocha Sprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -496,6 +497,10 @@ animations = [{
 radius = 4.0
 height = 14.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqyr0"]
+radius = 5.0
+height = 16.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqyr0"]
 size = Vector2(18, 2)
 
@@ -505,63 +510,93 @@ size = Vector2(18, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ubg4"]
 size = Vector2(7, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm7d7"]
+size = Vector2(18, 12)
+
 [node name="Player Body" type="CharacterBody2D" unique_id=727997143]
 script = ExtResource("1_ruikt")
 metadata/Mocha_Traits_Measures = [100.0, -300.0]
 metadata/Pieface_Traits_Measures = [150.0, -200.0]
 
-[node name="Animation Player" type="AnimationPlayer" parent="." unique_id=1616732637]
+[node name="Player Sprite" type="Node2D" parent="." unique_id=1104093193]
+
+[node name="Animation Player" type="AnimationPlayer" parent="Player Sprite" unique_id=1616732637]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_bm7d7")
 
-[node name="Mocha Sprite" type="AnimatedSprite2D" parent="." unique_id=1849403049 groups=["Player Sprites"]]
+[node name="Mocha Sprite" type="AnimatedSprite2D" parent="Player Sprite" unique_id=1849403049 groups=["Player Sprites"]]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_0v3yk")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Pieface Sprite" type="AnimatedSprite2D" parent="." unique_id=1826435619 groups=["Player Sprites"]]
+[node name="Pieface Sprite" type="AnimatedSprite2D" parent="Player Sprite" unique_id=1826435619 groups=["Player Sprites"]]
 visible = false
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_k2w2c")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="Swap Signifier" type="Sprite2D" parent="." unique_id=1201482501]
+visible = false
+position = Vector2(0, -23)
+texture = ExtResource("2_bm7d7")
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
 [node name="Player Collision" type="CollisionShape2D" parent="." unique_id=2131244944]
+visible = false
 position = Vector2(0, -4)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_homby")
 metadata/Mocha_Collision_Measures = [4.0, 14.0, -4.0]
 metadata/Pieface_Collision_Measures = [3.0, 10.0, -3.0]
 
-[node name="Crawl Upper-Check" type="Area2D" parent="." unique_id=892227220]
+[node name="Checks" type="Node2D" parent="." unique_id=771485637]
 visible = false
-collision_layer = 0
-collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crawl Upper-Check" unique_id=505831923]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_tqyr0")
-
-[node name="Crawl Lower-Check" type="Area2D" parent="." unique_id=252104429]
-visible = false
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crawl Lower-Check" unique_id=1828807878]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_homby")
-
-[node name="Ladder Check" type="Area2D" parent="." unique_id=1296114604]
-visible = false
+[node name="Swap Check" type="Area2D" parent="Checks" unique_id=1671252225]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder Check" unique_id=899936572]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checks/Swap Check" unique_id=2133934568]
+position = Vector2(0, -4)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_tqyr0")
+
+[node name="Crawl Upper-Check" type="Area2D" parent="Checks" unique_id=892227220]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checks/Crawl Upper-Check" unique_id=505831923]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_tqyr0")
+
+[node name="Crawl Lower-Check" type="Area2D" parent="Checks" unique_id=252104429]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checks/Crawl Lower-Check" unique_id=1828807878]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_homby")
+
+[node name="Ladder Check" type="Area2D" parent="Checks" unique_id=1296114604]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checks/Ladder Check" unique_id=899936572]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_6ubg4")
 
-[node name="Grab Range" type="Area2D" parent="." unique_id=579576510]
+[node name="Camera Check" type="Area2D" parent="Checks" unique_id=1164304488]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grab Range" unique_id=1565911116]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checks/Camera Check" unique_id=1703475796]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_bm7d7")
 
-[connection signal="body_entered" from="Grab Range" to="." method="_on_grab_range_body_entered"]
+[node name="Hand Range" type="Area2D" parent="." unique_id=102610473]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand Range" unique_id=1879128518]
+
+[node name="Hand Body" type="Node2D" parent="." unique_id=1073786352]

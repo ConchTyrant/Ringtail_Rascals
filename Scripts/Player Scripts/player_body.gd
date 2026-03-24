@@ -1,29 +1,14 @@
 extends CharacterBody2D
 
-# --- VARIABLES ---
-# -- Sprite Variables --
-## Animation Player
-@onready var animation_player = $"Animation Player"
-### Creates an array of each player form sprite
-@onready var player_sprites_group_members = get_tree().get_nodes_in_group("Player Sprites")
-
-# -- Collision Variables -- 
-## Player's collision
-@onready var player_collision = $"Player Collision"
 
 
-
-
-# Movement
-## Define trait variables
-var speed : float
-var jump_force : float
 
 # --- PHYSICS LOOP ---
 func _physics_process(delta: float) -> void:
 	
 	# Form
-	formController()
+	formStabilizer()
+	formSwap()
 	# Actions
 	walk()
 	jump()
@@ -41,18 +26,31 @@ func _physics_process(delta: float) -> void:
 
 # --- FUNCTIONS ---
 
-## -- FORM --
+## - FORM SWAP -
+
+## Player's collision
+@onready var player_collision = $"Player Collision"
+
+## Animation Player
+@onready var animation_player = $"Player Sprite/Animation Player"
+### Creates an array of each player form sprite
+@onready var player_sprites_group_members = get_tree().get_nodes_in_group("Player Sprites")
+
 ## Measurements for forms' collisions: [radius, height, position.y]
 @onready var mocha_collision = player_collision.get_meta("Mocha_Collision_Measures")
 @onready var pieface_collision = player_collision.get_meta("Pieface_Collision_Measures")
 
 ## Player Form Sprites
-@onready var mocha_sprite = $"Mocha Sprite"
-@onready var pieface_sprite = $"Pieface Sprite"
+@onready var mocha_sprite = $"Player Sprite/Mocha Sprite"
+@onready var pieface_sprite = $"Player Sprite/Pieface Sprite"
 
 ### Measurements for forms' traits: [speed, jump_force]
 @onready var mocha_traits = get_meta("Mocha_Traits_Measures")
 @onready var pieface_traits = get_meta("Pieface_Traits_Measures")
+
+## Define trait variables
+var speed : float
+var jump_force : float
 
 # Starter-Variable for stabilizer
 var stabilize_form = true
@@ -63,13 +61,8 @@ var form_sprite
 # Holds current form's traits measures
 var form_traits_measures : Array
 
-## Player Form
-var player_form = 'Mocha'
-### Foribly swap player form
-var force_swap : bool = false
 
-
-func formController():
+func formStabilizer():
 	
 	## -- FORM STABILIZER --
 	# Reset the player form (collision, sprite, traits)
@@ -112,11 +105,39 @@ func formController():
 		# - FINISH -
 		# Reset starter-variable
 		stabilize_form = false
+
+
+
+
+# - SWAP FORM -
+@onready var swap_check = $"Checks/Swap Check"
+@onready var swap_signifier = $"Swap Signifier"
+# Player's current form
+var player_form : String = 'Mocha'
+
+# If able to swap
+var can_swap : bool
+# Activates swapping of form
+var is_swap : bool 
+
+func formSwap():
+	
+	# Checks if able to swap
+	## If swap_check overlaps with Swap layer (4)
+	if swap_check.has_overlapping_areas():
+		can_swap = true
+	else:
+		can_swap = false
+	
+	# Determines swap-signifier's visibility
+	if can_swap:
+		swap_signifier.visible = true
+	else:
+		swap_signifier.visible = false
 	
 	
-	# -- SWAP FORM --
-	## Swap player's Form: on action or forced
-	if Input.is_action_just_pressed("SWAP") or force_swap:
+	## Swap player's Form on action
+	if Input.is_action_just_pressed("SWAP") and can_swap:
 		# From Mocha to Pieface
 		if player_form == 'Mocha':
 			player_form = 'Pieface'
@@ -126,7 +147,6 @@ func formController():
 		
 		# - FINISH -
 		# Undo force swap
-		force_swap = false
 
 
 
@@ -185,8 +205,8 @@ func jump():
 
 # - Crawl -
 ## Crawl Check
-@onready var crawl_upper_check = $"Crawl Upper-Check"
-@onready var crawl_lower_check = $"Crawl Lower-Check"
+@onready var crawl_upper_check = $"Checks/Crawl Upper-Check"
+@onready var crawl_lower_check = $"Checks/Crawl Lower-Check"
 
 ## Determines if player is crawling or not
 var crawling : bool
@@ -270,7 +290,7 @@ func reach():
 			set_collision_mask_value(3,false)
 
 # - Climb -
-@onready var ladder_check = $"Ladder Check"
+@onready var ladder_check = $"Checks/Ladder Check"
 
 var can_climb : bool
 var climbing : bool
@@ -281,6 +301,12 @@ func climb():
 		can_climb = false
 	else:
 		can_climb = true
+	
+	
+	
+	
+	
+	
 	
 	# - CLIMB FUNC -
 	if ladder_check.has_overlapping_areas() and can_climb:
@@ -308,20 +334,9 @@ func climb():
 
 
 
-# - GRAB -
-@onready var grab_range = $"Grab Range"
-
-var pickable_in_range : bool
 
 func grab():
 	pass
-
-
-# Grab Detect
-func _on_grab_range_body_entered(body: Node2D) -> void:
-	if body is Pickable:
-		pickable_in_range = true
-		print("Pickable")
 
 
 

@@ -44,9 +44,9 @@ position = Vector2(-136, 0)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1735035858]
 
-[node name="Camera List" type="Node2D" parent="Environment" unique_id=2087848635]
+[node name="Cameras" type="Node2D" parent="Environment" unique_id=2087848635]
 
-[node name="Main Room" type="Camera2D" parent="Environment/Camera List" unique_id=473841133]
+[node name="Main Room" type="Camera2D" parent="Environment/Cameras" unique_id=473841133]
 zoom = Vector2(3, 3)
 limit_left = -192
 limit_top = -114
@@ -54,11 +54,10 @@ limit_right = 192
 limit_bottom = 110
 position_smoothing_enabled = true
 
-[node name="Side Room" type="Camera2D" parent="Environment/Camera List" unique_id=1734634221]
-position = Vector2(-272, -41.000004)
+[node name="Side Room" type="Camera2D" parent="Environment/Cameras" unique_id=1734634221]
+position = Vector2(-272.00003, -40.000004)
 scale = Vector2(0.43883058, 0.60930085)
-enabled = false
-zoom = Vector2(5, 5)
+zoom = Vector2(8, 8)
 limit_left = -368
 limit_top = -112
 limit_right = -192

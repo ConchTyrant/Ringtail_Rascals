@@ -2,25 +2,32 @@
 
 [ext_resource type="Texture2D" uid="uid://crqknlh4r4ygw" path="res://Assets/Sprites/Tilesets/Movables Tileset V1-1.png.png" id="1_v2b8b"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2b8b"]
+size = Vector2(10, 10)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o884f"]
-size = Vector2(10, 2)
+size = Vector2(8, 1)
 
 [node name="Trashbin" type="StaticBody2D" unique_id=1350919109]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=678971075]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 texture = ExtResource("1_v2b8b")
+centered = false
 region_enabled = true
 region_rect = Rect2(16, 0, 16, 16)
 
-[node name="Trash Heap Area" type="Area2D" parent="." unique_id=737349458]
-
-[node name="Detection Collision" type="CollisionShape2D" parent="Trash Heap Area" unique_id=332997591]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=233963362]
 visible = false
-position = Vector2(0, -11)
+position = Vector2(8, -5)
+shape = SubResource("RectangleShape2D_v2b8b")
+
+[node name="Swap Area" type="Area2D" parent="." unique_id=737349458]
+visible = false
+position = Vector2(8, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swap Area" unique_id=332997591]
+position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_o884f")
-
-[node name="Wall Collision" type="CollisionPolygon2D" parent="." unique_id=547757391]
-visible = false
-position = Vector2(0, -8)
-polygon = PackedVector2Array(5, 8, -5, 8, -6, 4, -6, -2, 6, -2, 6, 4)
