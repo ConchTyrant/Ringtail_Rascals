@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://co6xnohilb6tw"]
+
+[ext_resource type="Texture2D" uid="uid://crqknlh4r4ygw" path="res://Assets/Sprites/Tilesets/Movables Tileset V1-1.png.png" id="1_pkfqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pkfqv"]
+radius = 5.0
+
+[node name="Key Item" type="StaticBody2D" unique_id=329260240]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=785675307]
+position = Vector2(8, -8)
+texture = ExtResource("1_pkfqv")
+region_enabled = true
+region_rect = Rect2(64, 16, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=665315926]
+visible = false
+position = Vector2(8, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=30107652]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_pkfqv")

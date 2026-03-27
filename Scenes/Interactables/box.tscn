@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bjcrmhm2jyp3r"]
+
+[ext_resource type="Texture2D" uid="uid://crqknlh4r4ygw" path="res://Assets/Sprites/Tilesets/Movables Tileset V1-1.png.png" id="1_diov8"]
+[ext_resource type="Script" uid="uid://cwrkp3qyx0mme" path="res://Scripts/box.gd" id="1_rj1fp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1fp"]
+size = Vector2(12, 8)
+
+[node name="Box" type="RigidBody2D" unique_id=621194929]
+script = ExtResource("1_rj1fp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2127735288]
+texture = ExtResource("1_diov8")
+centered = false
+region_enabled = true
+region_rect = Rect2(50, 8, 12, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1329463808]
+position = Vector2(6, 4)
+shape = SubResource("RectangleShape2D_rj1fp")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bute1ao831b06"]
+
+[ext_resource type="PackedScene" uid="uid://nmag6juh1qbu" path="res://Scenes/Player Scenes/player_body.tscn" id="1_nrsnm"]
+[ext_resource type="PackedScene" uid="uid://bm4gwrcjf76rs" path="res://Scenes/Levels/Apartments/alley_room.tscn" id="1_shv6c"]
+[ext_resource type="PackedScene" uid="uid://eeywqdsefhq7" path="res://Scenes/Levels/Apartments/collectors_room.tscn" id="3_5j6d5"]
+
+[node name="Lvl Apartments" type="Node2D" unique_id=763246012]
+
+[node name="Player Body" parent="." unique_id=727997143 instance=ExtResource("1_nrsnm")]
+position = Vector2(0, -16)
+
+[node name="Alley Room" parent="." unique_id=1666142229 instance=ExtResource("1_shv6c")]
+
+[node name="Collectors Room" parent="." unique_id=1796084409 instance=ExtResource("3_5j6d5")]
+position = Vector2(-256, -80)

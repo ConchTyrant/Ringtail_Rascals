@@ -1,0 +1,46 @@
+[gd_scene format=4 uid="uid://bm4gwrcjf76rs"]
+
+[ext_resource type="PackedScene" uid="uid://dynwqyjfs5ajk" path="res://Scenes/MAIN/interaction_layer.tscn" id="2_2yknt"]
+[ext_resource type="PackedScene" uid="uid://qpla4ao0in5x" path="res://Scenes/Interactables/ladder_part.tscn" id="3_3x4m2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hkp1r"]
+load_path = "res://.godot/imported/City Background v1.3.png-1c7e22a6dc5e474ecbd3c646fbad9964.ctex"
+
+[node name="Alley Room" type="Node2D" unique_id=1666142229 groups=["Room Group"]]
+
+[node name="Texture Grounds" type="Node2D" parent="." unique_id=417785610]
+visible = false
+
+[node name="Background" type="TextureRect" parent="Texture Grounds" unique_id=471320430]
+z_index = -10
+offset_left = -128.0
+offset_top = -160.0
+offset_right = 128.0
+texture = SubResource("CompressedTexture2D_hkp1r")
+
+[node name="Midground" type="TextureRect" parent="Texture Grounds" unique_id=1318570065]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Interaction Layer" parent="." unique_id=1440649432 instance=ExtResource("2_2yknt")]
+tile_map_data = PackedByteArray("AAD1////AAAAAAAAAAD2////AAAAAAAAAAD3////AAAAAAAAAAD4////AAAAAAAAAAD5////AAAAAAAAAAD6////AAAAAAAAAAD9////AAAAAAAAAAD/////AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAHAP//AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAAAP//AAAAAAAAAAD+////AAAAAAAAAAAKAP//AAAAAAAAAAAKAPv/AAAAAAAAAAD///X/AAAAAAAAAAAAAPX/AAAAAAAAAAAAAPf/AAACAAEAAFABAPb/AAAAAAEAAAAJAPb/AAAAAAEAAAAHAPf/AAAAAAEAAAAIAPf/AAAAAAEAAAAGAPj/AAAAAAEAAAAFAPj/AAAAAAEAAAAEAPj/AAAAAAEAAAAGAPf/AAAAAAEAAAABAPX/AAAAAAEAAAACAPb/AAAAAAEAAAADAPj/AAAAAAEAAAACAPf/AAAAAAEAAAADAPf/AAAAAAEAAAAKAPz/AAAAAAAAAAAAAPb/AAACAAEAAFD///f/AAACAAEAAGD///j/AAACAAEAAGAKAP3/AAAAAAAAAAD1//v/AAAAAAAAAAD+//X/AAAAAAEAAAD4//P/AAAAAAEAAAD3//P/AAAAAAEAAAD2//L/AAAAAAAAAAD9//X/AAAAAAEAAAD8//X/AAAAAAEAAAD8//T/AAAAAAEAAAD7//T/AAAAAAEAAAD6//T/AAAAAAEAAAD6//P/AAAAAAEAAAD5//P/AAAAAAEAAAD5//n/AAAAAAAAAAD1//7/AAABAAEAAHD1//3/AAABAAEAAHD1//z/AAABAAEAAHD2//3/AAACAAEAAFD2//P/AAAAAAEAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD7////AAAAAAEAAAD8////AAAAAAEAAAAEAP7/AAACAAAAAAAKAP7/AAAAAAAAAAAKAPr/AAAAAAAAAAAKAPn/AAABAAAAAAAKAPb/AAAAAAAAAAAKAPX/AAAAAAAAAAALAPX/AAAAAAAAAAAKAPT/AAAAAAAAAAD2//r/AAAAAAAAAAD3//r/AAAAAAAAAAD5//j/AAABAAAAAAD4//r/AAABAAAAACD5//r/AAACAAAAACD1//P/AAAAAAAAAAD1//L/AAAAAAAAAAD1//H/AAAAAAAAAAD1//r/AAAAAAAAAAD0////AAAAAAAAAAD0//r/AAAAAAAAAAAAAPj/AAACAAEAAFAAAPn/AAACAAEAAFAAAPr/AAACAAEAAFAAAPv/AAACAAEAAFAAAPz/AAACAAEAAFAAAP3/AAACAAEAAFAAAP7/AAACAAEAAFD///b/AAACAAEAAGD///n/AAACAAEAAGD///r/AAACAAEAAGD///v/AAACAAEAAGD///z/AAACAAEAAGD///3/AAACAAEAAGD///7/AAACAAEAAGA=")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=329401679]
+visible = false
+limit_left = -176
+limit_top = -300
+limit_right = 176
+limit_bottom = 0
+
+[node name="Ladder" type="Node2D" parent="." unique_id=130207894]
+position = Vector2(144, -64)
+
+[node name="Ladder Part1" parent="Ladder" unique_id=232528772 instance=ExtResource("3_3x4m2")]
+position = Vector2(0, -16)
+
+[node name="Ladder Part2" parent="Ladder" unique_id=717745415 instance=ExtResource("3_3x4m2")]
+position = Vector2(0, -32)
+
+[node name="Ladder Part3" parent="Ladder" unique_id=337984278 instance=ExtResource("3_3x4m2")]
+position = Vector2(0, -48)

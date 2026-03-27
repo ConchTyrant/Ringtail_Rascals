@@ -14,6 +14,16 @@ config/name="Ringtail Rascals"
 run/main_scene="uid://ooq03uupdt2t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
+
+[global_group]
+
+"Room Group"="Scenes "
+
 [input]
 
 LEFT={

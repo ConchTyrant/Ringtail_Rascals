@@ -1,0 +1,35 @@
+[gd_scene format=4 uid="uid://eeywqdsefhq7"]
+
+[ext_resource type="Texture2D" uid="uid://bx7uhclheud3f" path="res://Assets/Sprites/Backgrounds/RedRoom V1.3.png" id="1_d3817"]
+[ext_resource type="PackedScene" uid="uid://dynwqyjfs5ajk" path="res://Scenes/MAIN/interaction_layer.tscn" id="2_62erf"]
+[ext_resource type="PackedScene" uid="uid://co6xnohilb6tw" path="res://Scenes/Interactables/key_item.tscn" id="3_c1pon"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1pon"]
+atlas = ExtResource("1_d3817")
+region = Rect2(128, 48, 64, 96)
+
+[node name="Collectors Room" type="Node2D" unique_id=1796084409]
+
+[node name="Texture Grounds" type="Node2D" parent="." unique_id=861964686]
+
+[node name="Background" type="TextureRect" parent="Texture Grounds" unique_id=1210057210]
+visible = false
+offset_left = -128.0
+offset_top = -160.0
+offset_right = 128.0
+texture = ExtResource("1_d3817")
+
+[node name="Collection Shelf" type="TextureRect" parent="Texture Grounds" unique_id=191548672]
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -32.0
+texture = SubResource("AtlasTexture_c1pon")
+
+[node name="Interaction Layer" parent="." unique_id=1440649432 instance=ExtResource("2_62erf")]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD9////AAAAAAAAAAD8////AAAAAAAAAAADAP//AAAAAAAAAAAEAP//AAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAHAP//AAAAAAAAAAD7////AAAAAAAAAAD6////AAAAAAAAAAD5////AAAAAAAAAAD4////AAAAAAAAAAD3////AAAAAAAAAAAFAPv/AAAAAAAAAAAFAPr/AAAAAAAAAAAFAPn/AAAAAAAAAAAFAPj/AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAD1////AAAAAAAAAAD2////AAAAAAAAAAD4//j/AAAAAAAAAAD4//n/AAAAAAAAAAD4//r/AAAAAAAAAAD4//v/AAAAAAAAAAD5//j/AAAAAAAAAAD6//j/AAAAAAAAAAD7//j/AAAAAAAAAAD8//j/AAAAAAAAAAD9//j/AAAAAAAAAAD+//j/AAAAAAAAAAD///j/AAAAAAAAAAAAAPj/AAAAAAAAAAABAPj/AAAAAAAAAAACAPj/AAAAAAAAAAADAPj/AAAAAAAAAAAEAPj/AAAAAAAAAAAIAP//AAAAAAAAAAAJAP//AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP3/AAAAAAAAAAD8//r/AAAAAAEAAAD9//r/AAAAAAEAAAD6//r/AAAAAAEAAAD6//v/AAACAAEAAFD6//z/AAACAAEAAFD6//3/AAACAAEAAFD6//7/AAACAAEAAFD7//r/AAAAAAEAAAD9//v/AAACAAEAAGD9//z/AAACAAEAAGD9//3/AAACAAEAAGD9//7/AAACAAEAAGABAPv/AAACAAEAACAAAPv/AAACAAEAACD9//n/AAAAAAAAAAA=")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1698190444]
+visible = false
+
+[node name="Key Item" parent="." unique_id=329260240 instance=ExtResource("3_c1pon")]
+position = Vector2(16, -80)

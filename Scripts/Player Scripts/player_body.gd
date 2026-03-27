@@ -333,12 +333,28 @@ func climb():
 			velocity.y = 0
 
 
+# -- Hand Interact --
+@onready var hand_body = $"Hand Body"
+@onready var hand_range = $"Hand Range"
 
 
+# - Grab -
 func grab():
 	pass
 
 
+
+# - Push -
+var pushable_item : box_item
+func push():
+	# Detect
+	var item_in_range = hand_range.get_overlapping_bodies()
+	if item_in_range is box_item:
+		pushable_item = item_in_range
+	
+	# Push
+	if pushable_item:
+		pass
 
 
 ## -- EXTERNAL FORCES --

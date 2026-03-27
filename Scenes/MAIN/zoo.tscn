@@ -1,0 +1,18 @@
+[gd_scene format=4 uid="uid://cpb04amxhv0am"]
+
+[ext_resource type="PackedScene" uid="uid://dynwqyjfs5ajk" path="res://Scenes/MAIN/interaction_layer.tscn" id="1_i8mv6"]
+[ext_resource type="PackedScene" uid="uid://nmag6juh1qbu" path="res://Scenes/Player Scenes/player_body.tscn" id="2_3ofue"]
+[ext_resource type="PackedScene" uid="uid://bk2heismt31sa" path="res://Scenes/Interactables/Trash Heaps/trashbin.tscn" id="3_3ofue"]
+
+[node name="Zoo" type="Node2D" unique_id=1502791006]
+
+[node name="Interaction Layer" parent="." unique_id=1440649432 instance=ExtResource("1_i8mv6")]
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAD+/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD7//3/AAAAAAAAAAD7//z/AAAAAAAAAAD7//v/AAAAAAAAAAD5//3/AAAAAAAAAAD4//3/AAAAAAAAAAD3//3/AAAAAAAAAAD2//3/AAAAAAAAAAD1//3/AAAAAAAAAAD0//3/AAAAAAAAAAD7//r/AAAAAAAAAAD6//r/AAAAAAAAAAD5//z/AAAAAAAAAAD5//v/AAAAAAAAAAD5//r/AAAAAAAAAADz//3/AAAAAAAAAADy//3/AAAAAAAAAAD0//r/AAAAAAAAAAD6//f/AAAAAAAAAAD4//b/AAAAAAAAAADx//3/AAAAAAAAAADw//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAEAP//AAACAAAAACAFAP//AAACAAAAACAGAP//AAABAAAAACAHAP//AAABAAAAACACAP7/AAAAAAAAAAA=")
+
+[node name="Player Body" parent="." unique_id=727997143 instance=ExtResource("2_3ofue")]
+
+[node name="Camera2D" type="Camera2D" parent="Player Body" unique_id=113066903]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Trashbin" parent="." unique_id=1350919109 instance=ExtResource("3_3ofue")]
+position = Vector2(-32, 0)

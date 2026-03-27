@@ -510,8 +510,8 @@ size = Vector2(18, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ubg4"]
 size = Vector2(7, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm7d7"]
-size = Vector2(18, 12)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bm7d7"]
+radius = 12.0
 
 [node name="Player Body" type="CharacterBody2D" unique_id=727997143]
 script = ExtResource("1_ruikt")
@@ -555,6 +555,8 @@ metadata/Pieface_Collision_Measures = [3.0, 10.0, -3.0]
 [node name="Checks" type="Node2D" parent="." unique_id=771485637]
 visible = false
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Checks" unique_id=1359153721]
+
 [node name="Swap Check" type="Area2D" parent="Checks" unique_id=1671252225]
 collision_layer = 0
 collision_mask = 8
@@ -588,15 +590,12 @@ collision_mask = 4
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_6ubg4")
 
-[node name="Camera Check" type="Area2D" parent="Checks" unique_id=1164304488]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checks/Camera Check" unique_id=1703475796]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_bm7d7")
-
 [node name="Hand Range" type="Area2D" parent="." unique_id=102610473]
 visible = false
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand Range" unique_id=1879128518]
+shape = SubResource("CircleShape2D_bm7d7")
 
 [node name="Hand Body" type="Node2D" parent="." unique_id=1073786352]
+position = Vector2(0, -8)

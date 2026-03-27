@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d1nxxi66ww8fj"]
+
+[ext_resource type="Texture2D" uid="uid://ca8exqm18xvd1" path="res://Assets/Sprites/Tilesets/Simple Tileset V4.3.png" id="1_4wstw"]
+
+[node name="Clothesline" type="StaticBody2D" unique_id=122843643]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280549472]
+texture = ExtResource("1_4wstw")
+centered = false
+offset = Vector2(-64, 0)
+region_enabled = true
+region_rect = Rect2(0, 56, 64, 24)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1845748575]
+visible = false
+position = Vector2(43, 10)
+polygon = PackedVector2Array(-43, -2, -43, -8, -47.621048, -6.844738, -107, 8, -107, 14)
